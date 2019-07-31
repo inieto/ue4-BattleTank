@@ -73,5 +73,9 @@ Saved/*
 Intermediate/*
 Plugins/*/Intermediate/*
 
+# inieto - own
+cmake-build-debug/*
+.idea/*
+
 # Cache files for the editor to use
 DerivedDataCache/*
