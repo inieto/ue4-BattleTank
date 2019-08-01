@@ -76,6 +76,7 @@ Plugins/*/Intermediate/*
 # inieto - own
 cmake-build-debug/*
 .idea/*
+.DS_Store
 
 # Cache files for the editor to use
 DerivedDataCache/*
