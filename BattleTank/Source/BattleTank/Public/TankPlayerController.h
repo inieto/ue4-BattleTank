@@ -22,6 +22,14 @@ public:
 	void BeginPlay() override;
 
 private:
+// Editor Properties
+    UPROPERTY(EditAnywhere)
+    float CrosshairXLocation = 1.0f/2; //Little hacky, should read from BP properties
+
+    UPROPERTY(EditAnywhere)
+    float CrosshairYLocation = 1.0f/3; //Little hacky, should read from BP properties
+
+// Members
     void AimTowardsCrosshair();
     bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 };
