@@ -29,9 +29,13 @@ private:
     UPROPERTY(EditAnywhere)
     float CrosshairYLocation = 1.0f/3; //Little hacky, should read from BP properties
 
+    UPROPERTY(EditAnywhere)
+    float LineTraceRange = 10.f * 100 * 1000; //10km = 10cm * 100 (to m) * 1000 (to km);
+
 // Members
     void AimTowardsCrosshair();
     bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+    bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitLocation) const;
     bool GetLookDirection(FVector2D ScreenLocation, FVector& OutLookDirection) const;
 
 };
