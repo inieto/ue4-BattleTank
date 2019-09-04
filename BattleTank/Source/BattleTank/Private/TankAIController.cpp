@@ -21,3 +21,23 @@ ATank* ATankAIController::GetPlayerTank() const {
     auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
     return Cast<ATank> (PlayerPawn);
 }
+
+// Called every frame
+void ATankAIController::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    //TODO Move towards the player
+
+    //Aim towards the player
+    AimTowardsPlayerController();
+
+    //Fire if ready
+}
+
+// Start the tank moving the barrel so that a shot would hit where the crosshair intersects the world
+void ATankAIController::AimTowardsPlayerController() {  //it's not const since it will change state on the Tank
+    auto PlayerTank = GetPlayerTank();
+    auto ControlledTank = GetControlledTank();
+    if(!PlayerTank || !ControlledTank) return;
+    ControlledTank->AimAt(PlayerTank->GetActorLocation());
+}
